@@ -1,20 +1,24 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  a {
-    text-decoration: none;
-  }
-
   .site-header {
     background-color: rgba(0, 0, 0, 0.85);
+    width: 100%;
+    padding-bottom: 2rem;
+  }
+
+  .sticky-top {
+    position: fixed;
+    top: 0;
+    z-index: 1020;
   }
 
   .container {
     max-width: 960px;
   }
 
-  .py-2 {
-      padding-bottom: .5rem !important:
+  a {
+    text-decoration: none;
   }
 
   .site-header a {
@@ -24,6 +28,5 @@ export const Wrapper = styled.div`
 
   .site-header a:hover {
     color: #fff;
-    text-decoration: none;
   }
 `;

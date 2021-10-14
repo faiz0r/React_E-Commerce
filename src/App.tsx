@@ -5,12 +5,10 @@ import Item from "./components/Item/Item";
 import Drawer from "@material-ui/core/Drawer";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import Grid from "@material-ui/core/Grid";
-import Badge from "@material-ui/core/Badge";
 // Styles
-import { Wrapper, StyledButton } from "./App.styles";
+import { Wrapper } from "./App.styles";
 import Nav from "./components/Nav/Nav";
 import Cart from "./components/Cart/Cart";
-import { ShoppingCart } from "@material-ui/icons";
 // Types
 export type CartItemType = {
   id: number;
@@ -36,6 +34,7 @@ const App = () => {
 
   const getTotalItems = (items: CartItemType[]) =>
     items.reduce((ack: number, items) => ack + items.amount, 0);
+
   const handleAddToCart = (clickedItem: CartItemType) => {
     setCartItems((prev) => {
       // 1. Is the item already in the cart?
@@ -70,8 +69,12 @@ const App = () => {
   if (error) return <div>Something went wrong...</div>;
 
   return (
-    <Wrapper>
-      <Nav />
+    <Wrapper className="bg-light">
+      <Nav
+        cartItems={cartItems}
+        totalItems={getTotalItems}
+        cartOpen={setCartOpen}
+      />
       <Drawer anchor="right" open={cartOpen} onClose={() => setCartOpen(false)}>
         <Cart
           cartItems={cartItems}
@@ -79,11 +82,6 @@ const App = () => {
           removeFromCart={handleRemoveCart}
         />
       </Drawer>
-      <StyledButton onClick={() => setCartOpen(true)}>
-        <Badge badgeContent={getTotalItems(cartItems)} color="secondary">
-          <ShoppingCart />
-        </Badge>
-      </StyledButton>
       <Grid container spacing={3}>
         {data?.map((item) => (
           <Grid item key={item.id} xs={12} sm={4}>
@@ -94,4 +92,5 @@ const App = () => {
     </Wrapper>
   );
 };
+
 export default App;
