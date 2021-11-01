@@ -29,4 +29,10 @@ export const Wrapper = styled.div`
   .site-header a:hover {
     color: #fff;
   }
+
+  #icon,
+  #cart {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
 `;

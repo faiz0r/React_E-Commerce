@@ -1,8 +1,8 @@
 import { Wrapper } from "./Nav.style";
-import Badge from "@material-ui/core/Badge/Badge";
 import { ShoppingCart } from "@material-ui/icons";
-import CameraIcon from "@material-ui/icons/Camera";
 import { CartItemType } from "../../App";
+import Badge from "@material-ui/core/Badge/Badge";
+import CameraIcon from "@material-ui/icons/Camera";
 
 type Props = {
   cartItems: CartItemType[];
@@ -15,28 +15,32 @@ const Nav: React.FC<Props> = ({ cartItems, totalItems, cartOpen }) => {
     <Wrapper>
       <nav className="site-header sticky-top py-1">
         <div className="container d-flex flex-column flex-md-row justify-content-between">
-          <a className="py-2 d-none d-md-inline-block" href="test">
+          <a id="icon" className="d-md-inline-block" href="/#">
             <CameraIcon />
           </a>
-          <a className="py-2 d-none d-md-inline-block" href="/#">
+          <a id="tour" className="py-2 d-none d-md-inline-block" href="/#">
             Tour
           </a>
-          <a className="py-2 d-none d-md-inline-block" href="/#">
+          <a id="product" className="py-2 d-none d-md-inline-block" href="/#">
             Product
           </a>
-          <a className="py-2 d-none d-md-inline-block" href="/#">
+          <a id="features" className="py-2 d-none d-md-inline-block" href="/#">
             Features
           </a>
-          <a className="py-2 d-none d-md-inline-block" href="/#">
+          <a
+            id="enterprise"
+            className="py-2 d-none d-md-inline-block"
+            href="/#"
+          >
             Enterprise
           </a>
-          <a className="py-2 d-none d-md-inline-block" href="/#">
+          <a id="support" className="py-2 d-none d-md-inline-block" href="/#">
             Support
           </a>
-          <a className="py-2 d-none d-md-inline-block" href="/#">
+          <a id="pricing" className="py-2 d-none d-md-inline-block" href="/#">
             Pricing
           </a>
-          <a className="py-2" href="/#">
+          <a id="cart" className="d-none d-md-inline-block" href="/#">
             <Badge
               onClick={() => cartOpen(true)}
               badgeContent={totalItems(cartItems)}
