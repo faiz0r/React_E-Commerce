@@ -10,7 +10,7 @@ type Props = {
 
 const Item: React.FC<Props> = ({ item, handleAddToCart }) => (
   <Wrapper>
-    <div className="card mb-4 box-shadow">
+    <div className="card box-shadow">
       <img src={item.image} alt={item.title} />
       <div className="card-body">
         <p className="card-text">

@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 export const Wrapper = styled.div`
   margin: 0;
+  padding-top: 100px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";

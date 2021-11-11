@@ -68,33 +68,27 @@ const App = () => {
   if (error) return <div>Something went wrong...</div>;
 
   return (
-    <>
+    <Wrapper className="bg-light">
       <Nav
         cartItems={cartItems}
         totalItems={getTotalItems}
         cartOpen={setCartOpen}
       />
-      <Wrapper className="bg-light">
-        <Drawer
-          anchor="right"
-          open={cartOpen}
-          onClose={() => setCartOpen(false)}
-        >
-          <Cart
-            cartItems={cartItems}
-            addToCart={handleAddToCart}
-            removeFromCart={handleRemoveCart}
-          />
-        </Drawer>
-        <Grid container spacing={3}>
-          {data?.map((item) => (
-            <Grid item key={item.id} xs={12} sm={4}>
-              <Item item={item} handleAddToCart={handleAddToCart} />
-            </Grid>
-          ))}
-        </Grid>
-      </Wrapper>
-    </>
+      <Drawer anchor="right" open={cartOpen} onClose={() => setCartOpen(false)}>
+        <Cart
+          cartItems={cartItems}
+          addToCart={handleAddToCart}
+          removeFromCart={handleRemoveCart}
+        />
+      </Drawer>
+      <Grid container spacing={3}>
+        {data?.map((item) => (
+          <Grid item key={item.id} xs={12} sm={4}>
+            <Item item={item} handleAddToCart={handleAddToCart} />
+          </Grid>
+        ))}
+      </Grid>
+    </Wrapper>
   );
 };
 

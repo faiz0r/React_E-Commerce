@@ -4,7 +4,6 @@ export const Wrapper = styled.div`
   .site-header {
     background-color: rgba(0, 0, 0, 0.85);
     width: 100%;
-    padding-bottom: 2rem;
   }
 
   .sticky-top {
